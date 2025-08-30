@@ -1,14 +1,12 @@
-
-
-class Student 
+class Teacher 
 {
-    private : 
+ private : 
 
         int id ;
         string name;
         int age  ;
         string PhoneNumber ;  
-        double gpa ; 
+        double salary  ; 
 
     public : 
 
@@ -33,9 +31,9 @@ class Student
             this ->PhoneNumber = PhoneNumber ; 
         }
 
-         void setGpa (double gpa)
+         void setSalary (double salary)
         {
-            this ->gpa = gpa ; 
+            this ->salary = salary ; 
         }
 
         //*getters
@@ -60,9 +58,9 @@ class Student
           return PhoneNumber ;   
         }
 
-         double getGpa ()
+         double getSalary ()
         {
-            return gpa ; 
+            return salary ; 
         }
 
 };
