@@ -1,154 +1,166 @@
-#include<iostream>
-using namespace std ;
+#include <iostream>
+using namespace std;
+
+//create model shareDate 
+
+class ShareData
+{
+
+private:
+    int id;
+    string name;
+
+public:
+    // seters
+
+    void setId(int id)
+    {
+        this->id = id;
+    }
+
+    void setName(string name)
+    {
+        this->name = name;
+    }
+
+    // geters
+
+    int getId()
+    {
+        return id;
+    }
+
+    string getName()
+    {
+        return name;
+    }
+};
 
 // creat model  BaseEntity
 
-class BaseEntity
+class BaseEntity : public ShareData
 {
 
-private :
-        int id ;
-        string name;
-        int age  ;
-        string PhoneNumber ;  
-public :
+private:
+    int age;
+    string PhoneNumber;
 
-        void setId (int id)
-        {
-            this -> id = id ; 
-        }
+public:
+    void setAge(int age)
+    {
+        this->age = age;
+    }
 
-     void setName (string name)
-        {
-            this ->name = name ; 
-        }
+    void setPhoneNumber(string PhoneNumber)
+    {
+        this->PhoneNumber = PhoneNumber;
+    }
 
-         void setAge (int age)
-        {
-            this -> age = age ; 
-        }
+    int getAge()
+    {
+        return age;
+    }
 
-         void setPhoneNumber (string PhoneNumber)
-        {
-            this ->PhoneNumber = PhoneNumber ; 
-        }
-
-
-         int getId ()
-        {
-            return id ; 
-        }
-
-     string getName ()
-        {
-            return name ; 
-        }
-
-         int  getAge ()
-        {
-           return age ;  
-        }
-
-         string getPhoneNumber ()
-        {
-          return PhoneNumber ;   
-        }
-
-        
+    string getPhoneNumber()
+    {
+        return PhoneNumber;
+    }
 };
 
-
-//create model teacher 
+// create model teacher
 
 class Teacher : public BaseEntity
 {
- private : 
+private:
+    double salary;
+    int studentIds[5];
 
-         
-        double salary  ; 
-        int studentIds [5];
-        
-    public : 
-
+public:
     //* setters
-       
-         void setSalary (double salary)
+
+    void setSalary(double salary)
+    {
+        this->salary = salary;
+    }
+
+    void setstudentsId(int studentIds[5])
+    {
+        for (int i = 0; i < sizeof(studentIds) / sizeof(studentIds[0]); i++)
         {
-            this ->salary = salary ; 
+            this->studentIds[i] = studentIds[i];
         }
+    }
 
-        
-        void setstudentsId (int studentIds[5])
-        {
-            for(int i = 0 ; i< 5 ; i++ )
-            {
-                this -> studentIds[i] = studentIds[i] ;
-            }
+    //*getters
 
+    int *getStudentIds()
+    {
+        return studentIds;
+    }
 
-        }
-
-
-
-        //*getters
-
-       int *  getStudentIds ()
-        {
-            return studentIds;
-        }
-
-         double getSalary ()
-        {
-            return salary ; 
-        }
-
+    double getSalary()
+    {
+        return salary;
+    }
 };
 
-
-// craete model student 
+// craete model student
 
 class Student : public BaseEntity
 {
-    private : 
+private:
+    double gpa;
+    Teacher teachers[5];
 
-         
-        double gpa ; 
-        Teacher teachers [5];
-
-    public : 
-
+public:
     //* setters
-       
 
-         void setGpa (double gpa)
+    void setGpa(double gpa)
+    {
+        this->gpa = gpa;
+    }
+
+    void setTeachers(Teacher teachers[5])
+    {
+        for (int i = 0; i < 5; i++)
         {
-            this ->gpa = gpa ; 
+            this->teachers[i] = teachers[i];
         }
+    }
 
-        void setTeachers (  Teacher teachers [5])
-        {
-            for (int i = 0 ; i < 5 ; i++ )
-            {
-                this ->teachers[i]=teachers[i];
-            }
-        }
+    //*getters
 
+    //! pointer عم ياشر ع الاراي
+    Teacher *getTeachers()
+    {
+        return teachers;
+    }
 
+    double getGpa()
+    {
+        return gpa;
+    }
+};
 
-        //*getters
+// create model course
 
-        //! pointer عم ياشر ع الاراي 
-        Teacher * getTeachers (  )
-        {
-            return teachers ;
-        }
+class Course : public ShareData
+{
+private:
+    double hour;
 
-        
-            
+public:
+    // seters
 
-         double getGpa ()
-        {
-            return gpa ; 
-        }
+    void sethour(double hour)
+    {
+        this->hour = hour;
+    }
 
+    // geters
+
+    double gethour()
+    {
+        return hour;
+    }
 };
