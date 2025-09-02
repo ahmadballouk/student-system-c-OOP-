@@ -1,5 +1,6 @@
 
 #include "BaseEntity.cpp"
+#include "teacher.cpp"
 
 
 class Student : public BaseEntity
@@ -8,7 +9,7 @@ class Student : public BaseEntity
 
          
         double gpa ; 
-
+        Teacher arr [5];
     public : 
 
     //* setters
