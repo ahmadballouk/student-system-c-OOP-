@@ -66,7 +66,8 @@ class Teacher : public BaseEntity
 
          
         double salary  ; 
-
+        int studentIds [5];
+        
     public : 
 
     //* setters
@@ -76,9 +77,25 @@ class Teacher : public BaseEntity
             this ->salary = salary ; 
         }
 
+        
+        void setstudentsId (int studentIds[5])
+        {
+            for(int i = 0 ; i< 5 ; i++ )
+            {
+                this -> studentIds[i] = studentIds[i] ;
+            }
+
+
+        }
+
+
+
         //*getters
 
-
+       int *  getStudentIds ()
+        {
+            return studentIds;
+        }
 
          double getSalary ()
         {
