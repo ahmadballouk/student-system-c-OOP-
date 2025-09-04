@@ -1,7 +1,7 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-// create model shareDate
+//*create model shareDate
 
 class ShareData
 {
@@ -36,7 +36,7 @@ public:
     }
 };
 
-// creat model  BaseEntity
+//*creat model  BaseEntity
 
 class BaseEntity : public ShareData
 {
@@ -67,7 +67,7 @@ public:
     }
 };
 
-// create model teacher
+//* create model teacher
 
 class Teacher : public BaseEntity
 {
@@ -104,7 +104,7 @@ public:
     }
 };
 
-// create model course
+//* create model course
 
 class Course : public ShareData
 {
@@ -140,7 +140,7 @@ public:
     }
 };
 
-// craete model student
+//* craete model student
 
 class Student : public BaseEntity
 {
@@ -190,3 +190,6 @@ public:
         return courses;
     }
 };
+
+
+
