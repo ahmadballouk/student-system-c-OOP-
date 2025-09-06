@@ -1,3 +1,4 @@
+#include"../model/models.cpp"
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -6,13 +7,36 @@ using namespace std;
 //* interface studentRepository
 class studentRepository
 {
+    public:
 
+        virtual int  addstudent (Student student)  ; 
+        
 };
+
 
 
 //* class studentRepositoryImpl
 class studentRepositoryImpl : public studentRepository
 {
+
+private :
+    Student student [25];
+    int index = 0 ;
+
+public :
+    int  addstudent (Student student)
+    {
+        if (index == 25)
+        {
+            cout<<"full student"<<endl;
+        }
+        else
+        {
+        student[index] = student ;
+        index++;
+        }
+    }
+
 
 };
 
@@ -22,7 +46,9 @@ class studentRepositoryImpl : public studentRepository
 
 class courseRepository
 {
+  public :
 
+ 
 };
 
 
