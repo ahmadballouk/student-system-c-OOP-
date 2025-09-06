@@ -9,7 +9,7 @@ class studentRepository
 {
     public:
 
-        virtual int  addstudent (Student student)  ; 
+        virtual int  addstudent (Student student) = 0 ; 
         
 };
 
@@ -20,7 +20,7 @@ class studentRepositoryImpl : public studentRepository
 {
 
 private :
-    Student student [25];
+    Student students [25];
     int index = 0 ;
 
 public :
@@ -32,7 +32,7 @@ public :
         }
         else
         {
-        student[index] = student ;
+        students[index] = student ;
         index++;
         }
     }
@@ -48,6 +48,9 @@ class courseRepository
 {
   public :
 
+        virtual int  addcourse (Course course) = 0 ; 
+
+
  
 };
 
@@ -55,6 +58,23 @@ class courseRepository
 //* class courseRepositoryImpl
 class courseRepositoryImpl : public courseRepository
 {
+    private :
+   Course courses [25];
+    int index = 0 ;
+
+public :
+    int  addscourse (Course course)
+    {
+        if (index == 25)
+        {
+            cout<<"full teachers"<<endl;
+        }
+        else
+        {
+        courses[index] = course ;
+        index++;
+        }
+    }
 
 };
 
@@ -65,6 +85,7 @@ class courseRepositoryImpl : public courseRepository
 
 class TeacherRepository
 {
+        virtual int  addteacher (Teacher teacher) = 0 ; 
 
 };
 
@@ -73,6 +94,23 @@ class TeacherRepository
 class TeacherRepositoryImpl : public TeacherRepository
 {
 
+         private :
+   Teacher Teachers [25];
+    int index = 0 ;
+
+public :
+    int  addscourse (Teacher teacher)
+    {
+        if (index == 25)
+        {
+            cout<<"full courses"<<endl;
+        }
+        else
+        {
+        Teachers[index] = teacher ;
+        index++;
+        }
+    }
 };
 
 
