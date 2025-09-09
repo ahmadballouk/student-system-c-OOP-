@@ -3,6 +3,7 @@
 using namespace std ; 
 
 
+
 class StudentService {
 
     public :
@@ -14,12 +15,12 @@ class StudentServiceImpl {
 
 private : 
 
- StudentRepository studentRepository ; 
+ StudentRepositoryImpl studentRepository ; 
 
 
 
 public :
-     int addstudent(Student student)
+     int addStudent(Student student)
     {
       return  studentRepository.addStudent(student);
     }
@@ -43,11 +44,11 @@ class CourseServiceImpl {
 
 
 private :
- CourseRepository courseRepository ;
+ CourseRepositoryImpl courseRepository ;
 
 
 public :
-     int addscourse(Course course)
+     int addCourse(Course course)
     {
         return  courseRepository.addCourse(course);
     }
@@ -56,7 +57,7 @@ public :
 
 class TeacherService {
 
-    virtual int addteacher(Teacher teacher) = 0 ;
+    virtual int addTeacher(Teacher teacher) = 0 ;
 
 
 };
@@ -71,12 +72,12 @@ private :
 
   
 
-TeacherRepository teacherRepository ; 
+TeacherRepositoryImpl teacherRepository ; 
 
 
 public :
 
-int addteacher(Teacher teacher)
+int addTeacher(Teacher teacher)
     {
        return teacherRepository.addTeacher(teacher);
     }
