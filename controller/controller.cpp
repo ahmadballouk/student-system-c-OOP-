@@ -9,7 +9,7 @@ class StudentController
 {
     private :
 
-        StudentService studentService ; 
+        StudentServiceImpl studentService ; 
 
     public :
 
@@ -28,7 +28,7 @@ class CourseController
 
     private :
 
-     CourseService  courseService ; 
+     CourseServiceImpl  courseService ; 
 
     public :
 
@@ -47,7 +47,7 @@ class TeacherController
 
     private :
 
-        TeacherService TeacherService ;
+        TeacherServiceImpl TeacherService ;
 
     public :
 
