@@ -2,6 +2,7 @@
 #include<bits/stdc++.h>
 
 
+//!-----------------------------------student-------------------------------------
 
 
 class StudentController
@@ -18,6 +19,8 @@ class StudentController
     }
 
 };
+
+//!-----------------------------------course-------------------------------------
 
 
 class CourseController
@@ -37,6 +40,7 @@ class CourseController
 
 };
 
+//!-----------------------------------teacher-------------------------------------
 
 class TeacherController
 {
