@@ -1,78 +1,73 @@
-#include"../model/models.cpp"
-#include<bits/stdc++.h>
+#include "../model/models.cpp"
+#include <bits/stdc++.h>
 using namespace std;
 
 
 ////////////////!student////////////////////////////////////
 //* interface studentRepository
-class studentRepository
+class StudentRepository
 {
-    public:
-
-        virtual int  addstudent (Student student) = 0 ; 
-        
+public:
+    virtual int addStudent(Student student) = 0;
 };
 
 
 
 //* class studentRepositoryImpl
-class studentRepositoryImpl : public studentRepository
+class StudentRepositoryImpl : public StudentRepository
 {
 
-private :
-    Student students [25];
-    int index = 0 ;
+private:
+    Student students[25];
+    int index = 0;
 
-public :
-    int  addstudent (Student student)
+public:
+    int addStudent(Student student)
     {
         if (index == 25)
         {
-            cout<<"full student"<<endl;
+            cout << "full student" << endl;
         }
         else
         {
-        students[index] = student ;
-        index++;
+            students[index] = student;
+            index++;
         }
     }
 
 
 };
 
+
 ////////////////!course////////////////////////////////////
 
 //* interface courseRepository
 
-class courseRepository
+class CourseRepository
 {
-  public :
-
-        virtual int  addcourse (Course course) = 0 ; 
-
-
- 
+public:
+    virtual int addCourse(Course course) = 0;
 };
 
 
 //* class courseRepositoryImpl
-class courseRepositoryImpl : public courseRepository
+class CourseRepositoryImpl : public CourseRepository
 {
-    private :
-   Course courses [25];
-    int index = 0 ;
+private:
+    Course courses[25];
+    int index = 0;
 
-public :
-    int  addscourse (Course course)
+public:
+    int addCourse(Course course)
     {
         if (index == 25)
         {
-            cout<<"full teachers"<<endl;
+            cout << "full teachers" << endl;
         }
         else
         {
-        courses[index] = course ;
-        index++;
+            courses[index] = course;
+            index++;
         }
     }
 
@@ -85,8 +80,7 @@ public :
 
 class TeacherRepository
 {
-        virtual int  addteacher (Teacher teacher) = 0 ; 
-
+    virtual int addTeacher(Teacher teacher) = 0 ;
 };
 
 
@@ -94,23 +88,24 @@ class TeacherRepository
 class TeacherRepositoryImpl : public TeacherRepository
 {
 
-         private :
-   Teacher Teachers [25];
-    int index = 0 ;
+private:
+    Teacher teachers[25];
+    int index = 0;
 
-public :
-    int  addscourse (Teacher teacher)
+public:
+    int addTeacher(Teacher teacher)
     {
         if (index == 25)
         {
-            cout<<"full courses"<<endl;
+            cout << "full courses" << endl;
         }
         else
         {
-        Teachers[index] = teacher ;
-        index++;
+            teachers[index] = teacher;
+            index++;
         }
     }
 };
+
 
 
